@@ -1,3 +1,5 @@
+#!/usr/bin/python3.7
+
 import logging
 
 import json
@@ -41,13 +43,13 @@ class Tokenizer(RequestRoutingHandler):
             self._items["__set_values"] = set()
 
     def _get_random_number(self):
-        rand_number = -1
+        rand_number = 0
 
-        while rand_number == -1:
-            rand_number = randint(0, 9999)
-
-            if rand_number in self._items["__set_values"]:
-                rand_number = -1
+        # while rand_number == -1:
+        #     rand_number = randint(0, 9999)
+        #
+        #     if rand_number in self._items["__set_values"]:
+        #         rand_number = -1
 
         return rand_number
 

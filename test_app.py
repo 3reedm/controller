@@ -3,38 +3,37 @@
 import re
 import sys
 
-import pytest
+import unittest
 
 import tornado.httpclient
 
 import app
 
-params = [("http://localhost:3000/api/v1/portal/1.4/1/", r'{"token": "[0-9][0-9][0-9][0-9]"}'),
-          ("http://localhost:3000/api/v1/portal/1.4/2/", r'{"token": "[0-9][0-9][0-9][0-9]"}')]
+
+class TestApp(unittest.TestCase):
+    def __init__(self, *args):
+        super().__init__(*args)
+        self.args = [("http://localhost:3000/api/v1/portal/1.4/1/", r'{"token": "[0-9][0-9][0-9][0-9]"}'),
+                     ("http://localhost:3000/api/v1/portal/1.4/2/", r'{"token": "[0-9][0-9][0-9][0-9]"}')]
+
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    def test_route(self):
+        for params in self.args:
+            try:
+                http_client = tornado.httpclient.HTTPClient()
+                response = http_client.fetch(params[0])
+            except Exception as e:
+                print("Error: %s" % e)
+            else:
+                self.assertTrue(re.match(params[1], response.body.decode()))
+            finally:
+                http_client.close()
 
 
-def setup_module(module):
-    pass
-
-
-def teardown_module(module):
-    pass
-
-
-@pytest.fixture(scope="module")
-def client():
-    http_client = tornado.httpclient.HTTPClient()
-
-    yield http_client
-
-    http_client.close()
-
-
-@pytest.mark.parametrize("path, rule", params)
-def test_route(client, path, rule):
-    try:
-        response = client.fetch(path)
-    except Exception as e:
-        print("Error: %s" % e)
-    else:
-        assert re.match(rule, response.body.decode())
+if __name__ == "__main__":
+    unittest.main()

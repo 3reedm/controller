@@ -1,3 +1,4 @@
+import logging
 import re
 
 from tornado.escape import json_decode, json_encode
@@ -7,10 +8,10 @@ app = RoutingApplication()
 
 
 class Tokenizer(RequestRoutingHandler):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self):
         self._load_data()
         self._changed = False
+        self._logging = logging.getLogger("root")
 
     def __del__(self):
         if (self._changed):
@@ -29,7 +30,7 @@ class Tokenizer(RequestRoutingHandler):
 
     def _match(self, rule, path):
         sub_paths = path.split('/')
-        sub_rules = rule.split('/')
+        sub_rules = rule.split('/')[1:]
 
         n_rule = len(sub_rules)
         n_path = len(sub_paths)
@@ -56,6 +57,8 @@ class Tokenizer(RequestRoutingHandler):
         if not rule or not func_name:
             raise HTTPError(404, "")
 
+        info = str(rule) + " " + str(self.request.path)
+        self._logging.debug(info)
         match = re.match(rule, self.request.path) or self._match(
             rule, self.request.path)
         if match:
@@ -84,7 +87,9 @@ class Tokenizer(RequestRoutingHandler):
 
         return child_items[path[-1]]
 
-    @app.route(r'/api/([^/]+)/([^/]+)/([^/]+)/([^/]+)/?', methods=['GET'])
-    def get_token(self, *path):
+    @app.route('/api/<system>/<platform>/<version>/<redaction>', methods=['GET'])
+    @app.route('/api/<system>/<platform>/<version>/<redaction>/', methods=['GET'])
+    def get_token(self, system='v1', platform='portal', version='1.4', redaction='1'):
+        path = [system, platform, version, redaction]
         token = self._get_token(path)
         self.write({'token': token})

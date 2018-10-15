@@ -1,0 +1,85 @@
+INFO:tornado.application.routing:register GET /api/<system>/<platform>/<version>/<redaction>/ to core.tokenizer.tokenizer.Tokenizer.get_token
+INFO:tornado.application.routing:register GET /api/<system>/<platform>/<version>/<redaction> to core.tokenizer.tokenizer.Tokenizer.get_token
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.42ms
+DEBUG:root:Stopping
+
+INFO:tornado.application.routing:register GET /api/<system>/<platform>/<version>/<redaction>/ to core.tokenizer.tokenizer.Tokenizer.get_token
+INFO:tornado.application.routing:register GET /api/<system>/<platform>/<version>/<redaction> to core.tokenizer.tokenizer.Tokenizer.get_token
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.44ms
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.32ms
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.49ms
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.46ms
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.49ms
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.46ms
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.64ms
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.42ms
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Stopping
+
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.45ms
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.34ms
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Stopping
+
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.40ms
+DEBUG:root:Stopping
+
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.44ms
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.36ms
+WARNING:tornado.access:405 COPY /api/v3/portal/1.4/1/ (192.168.12.10) 0.33ms
+WARNING:tornado.access:404 POST /api/v3/portal/1.4/1/ (192.168.12.10) 0.35ms
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.32ms
+WARNING:tornado.access:404 PUT /api/v3/portal/1.4/1/ (192.168.12.10) 0.33ms
+WARNING:tornado.access:404 DELETE /api/v3/portal/1.4/1/ (192.168.12.10) 0.34ms
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.36ms
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.43ms
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.39ms
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.43ms
+DEBUG:root:Stopping
+

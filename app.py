@@ -3,7 +3,7 @@ import logging
 
 import sys
 
-sys.path.insert(1, "./ex-libs/tornado-routing")
+sys.path.insert(1, "./libs/tornado-routing")
 import core.tokenizer.tokenizer
 
 import tornado.httpserver

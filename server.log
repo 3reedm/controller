@@ -83,3 +83,5 @@ DEBUG:root:Starting Web listen on: 192.168.12.10:3000
 WARNING:tornado.access:404 GET /api/v3/portal/1.4/1/ (192.168.12.10) 0.43ms
 DEBUG:root:Stopping
 
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000

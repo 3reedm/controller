@@ -1,17 +1,17 @@
 import logging
 import re
+import urllib
 
 from tornado.escape import json_decode, json_encode
-from tornado_routing import RoutingApplication, RequestRoutingHandler
+from tornado_routing import RequestRoutingHandler
 
-app = RoutingApplication()
+logging.basicConfig(filename="server.log", level=logging.DEBUG)
 
 
 class Tokenizer(RequestRoutingHandler):
     def __init__(self):
         self._load_data()
         self._changed = False
-        self._logging = logging.getLogger("root")
 
     def __del__(self):
         if (self._changed):
@@ -24,13 +24,13 @@ class Tokenizer(RequestRoutingHandler):
         try:
             with open("data.json") as file:
                 self._items = json_decode(file.read())
-        except Exception as e:
+        except Exception:
             self._items = {}
             self._items["__counter"] = -1
 
     def _match(self, rule, path):
-        sub_paths = path.split('/')
-        sub_rules = rule.split('/')[1:]
+        sub_paths = path[path.find(":")].split('/')[1:]
+        sub_rules = rule[1:].split('/')
 
         n_rule = len(sub_rules)
         n_path = len(sub_paths)
@@ -55,16 +55,14 @@ class Tokenizer(RequestRoutingHandler):
             full_class_name, {}).get(self.request.method, (None, None))
 
         if not rule or not func_name:
-            raise HTTPError(404, "")
+            raise urllib.HTTPError(404, "Olololo")
 
-        info = str(rule) + " " + str(self.request.path)
-        self._logging.debug(info)
         match = re.match(rule, self.request.path) or self._match(
             rule, self.request.path)
         if match:
             return func_name
         else:
-            raise HTTPError(404, "")
+            raise urllib.HTTPError(404, "")
 
     def _get_token(self, path):
         new_attr = False
@@ -87,9 +85,6 @@ class Tokenizer(RequestRoutingHandler):
 
         return child_items[path[-1]]
 
-    @app.route('/api/<system>/<platform>/<version>/<redaction>', methods=['GET'])
-    @app.route('/api/<system>/<platform>/<version>/<redaction>/', methods=['GET'])
-    def get_token(self, system='v1', platform='portal', version='1.4', redaction='1'):
-        path = [system, platform, version, redaction]
-        token = self._get_token(path)
+    def get(self, *args):
+        token = self._get_token(*args)
         self.write({'token': token})

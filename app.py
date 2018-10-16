@@ -1,10 +1,10 @@
 #!/usr/bin/python3.7
 import logging
-
 import sys
 
 sys.path.insert(1, "./libs/tornado-routing")
-import core.tokenizer.tokenizer
+sys.path.insert(1, "./core/routing")
+sys.path.insert(1, "./core/tokenizer")
 
 import tornado.httpserver
 import tornado.ioloop
@@ -12,7 +12,7 @@ import tornado.options
 
 from tornado.options import define, options
 
-from core.tokenizer.tokenizer import app
+from tokenizer import app
 
 define("port", default=3000,
        help="Server listening port", type=int)

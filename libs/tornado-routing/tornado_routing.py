@@ -25,6 +25,7 @@ class RoutingApplication():
         """
         A decorator that is used to register a given URL rule.
         """
+
         def decorator(func, *args, **kwargs):
             func_name = func.__name__
             frm = inspect.stack()[1]

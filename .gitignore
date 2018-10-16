@@ -1,0 +1,5 @@
+#ignore dynamic bin
+*.pyc
+__pycache__
+#ignore bluefish temp files
+*.*~

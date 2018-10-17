@@ -12,7 +12,7 @@ import tornado.options
 
 from tornado.options import define, options
 
-from tokenizer import app
+from routing import app
 
 define("port", default=3000,
        help="Server listening port", type=int)

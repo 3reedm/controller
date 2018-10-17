@@ -223,3 +223,9 @@ INFO:tornado.application.routing:register GET /api/v1/Portal/(.*) to tokenizer.c
 INFO:tornado.application.routing:register GET /api/V1/(.*) to tokenizer.cls.get
 INFO:tornado.application.routing:register GET /api/V2/(.*) to tokenizer.cls.get
 INFO:tornado.application.routing:register GET //API/(.*) to tokenizer.cls.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/2/(.*) to routing.MagicTokenizer.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(.*) to routing.MagicTokenizer.get
+INFO:tornado.application.routing:register GET /api/v1/Portal/(.*) to routing.MagicTokenizer.get
+INFO:tornado.application.routing:register GET /api/V1/(.*) to routing.MagicTokenizer.get
+INFO:tornado.application.routing:register GET /api/V2/(.*) to routing.MagicTokenizer.get
+INFO:tornado.application.routing:register GET //API/(.*) to routing.MagicTokenizer.get

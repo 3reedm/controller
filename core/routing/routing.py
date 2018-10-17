@@ -18,6 +18,9 @@ def route(rule, methods=['GET'], handler=Tokenizer):
         new_rule = rule + '/' + name + '/(.*)'
 
         class MagicTokenizer(cls):
+            def __init__(self):
+                super().__init__()
+
             @app.route(new_rule, methods)
             def get(self, *args):
                 super().get(*args)

@@ -10,9 +10,11 @@ import tornado.httpserver
 import tornado.ioloop
 import tornado.options
 
+import routing
+
 from tornado.options import define, options
 
-from routing import app
+from tokenizer import app
 
 define("port", default=3000,
        help="Server listening port", type=int)

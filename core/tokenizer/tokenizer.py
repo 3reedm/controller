@@ -3,13 +3,16 @@ import re
 import urllib
 
 from tornado.escape import json_decode, json_encode
-from tornado_routing import RequestRoutingHandler
+from tornado_routing import RequestRoutingHandler, RoutingApplication
 
 logging.basicConfig(filename="server.log", level=logging.DEBUG)
 
+app = RoutingApplication()
+
 
 class Tokenizer(RequestRoutingHandler):
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self._load_data()
         self._changed = False
 
@@ -86,5 +89,6 @@ class Tokenizer(RequestRoutingHandler):
         return child_items[path[-1]]
 
     def get(self, *args):
-        token = self._get_token(*args)
+        print(args)
+        token = self._get_token(args)
         self.write({'token': token})

@@ -1,47 +1,55 @@
+import re
+
 from functools import reduce
 
-from tokenizer import Tokenizer
-from tornado_routing import RoutingApplication
-
-app = RoutingApplication()
+from tokenizer import app
 
 
-def route(rule, methods=['GET'], handler=Tokenizer):
-    def wrap(cls):
-        cls_name_arr = cls.__name__.split('_')
+def route(url, methods=["GET"], module_name="tokenizer", class_name="Tokenizer"):
+    def wrapper(cls):
+        urls = []
 
-        if (len(cls_name_arr) > 1):
-            name = reduce(lambda x, y: (x + '.' + y), cls_name_arr[1:])
-        else:
-            name = cls.__name__
+        def classtree(cls, prev_name=""):
+            cls_name_arr = cls.__name__.split('_')
 
-        new_rule = rule + '/' + name + '/(.*)'
+            if (len(cls_name_arr) > 1):
+                name = reduce(lambda x, y: (x + '.' + y), cls_name_arr[1:])
+            else:
+                name = cls.__name__
 
-        class MagicTokenizer(cls):
-            def __init__(self):
-                super().__init__()
+            prev_name += "/" + name.lower()
 
-            @app.route(new_rule, methods)
-            def get(self, *args):
-                super().get(*args)
+            cls_childs = [value for key, value in cls.__dict__.items(
+            ) if re.match(r"<class", str(value))]
+            for child in cls_childs:
+                urls.append(classtree(child, prev_name))
 
-        return MagicTokenizer
+            return prev_name
 
-    return wrap
+        classtree(cls)
+
+        str_exec = "class " + class_name + ":\n"
+        for url in urls:
+            last_slash_index = url.rfind("/") + 1
+            url = url[:last_slash_index] + "(" + url[last_slash_index:] + ")"
+            str_exec += "    @app.route('" + url + \
+                "', methods=" + str(methods) + \
+                ", module='" + module_name + "', cls='" + \
+                class_name + "')\n"
+        str_exec += "    def get(self, *args):\n        pass\n\n"
+
+        return exec(str_exec)
+
+    return wrapper
 
 
-@route('/', methods=['GET'])
+@route("/")
 class API:
-    @route('/api', methods=['GET'])
     class V1:
-        @route('/api/v1', methods=['GET'])
         class Portal:
-            @route('/api/v1/portal', methods=['GET'])
             class Version_1_4:
-                @route('/api/v1/portal/1.4', methods=['GET'])
                 class Redaction_2:
                     pass
 
-    @route('/api', methods=['GET'])
     class V2:
         pass

@@ -1,7 +1,7 @@
 import logging
 import re
-import urllib
 
+from tornado.web import HTTPError
 from tornado.escape import json_decode, json_encode
 from tornado_routing import RequestRoutingHandler, RoutingApplication
 
@@ -58,14 +58,14 @@ class Tokenizer(RequestRoutingHandler):
             full_class_name, {}).get(self.request.method, (None, None))
 
         if not rule or not func_name:
-            raise urllib.HTTPError(404, "Olololo")
+            raise HTTPError(404, "Olololo")
 
         match = re.match(rule, self.request.path) or self._match(
             rule, self.request.path)
         if match:
             return func_name
         else:
-            raise urllib.HTTPError(404, "")
+            raise HTTPError(404, "")
 
     def _get_token(self, path):
         new_attr = False
@@ -89,6 +89,5 @@ class Tokenizer(RequestRoutingHandler):
         return child_items[path[-1]]
 
     def get(self, *args):
-        print(args)
         token = self._get_token(args)
         self.write({'token': token})

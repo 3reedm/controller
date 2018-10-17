@@ -21,7 +21,7 @@ class RoutingApplication():
         self.app = app or Application()
         self.handler_map = OrderedDict()
 
-    def route(self, rule, methods=['GET'], kwargs=None, name=None, module=None, cls=None):
+    def route(self, rule, methods=['GET'], kwargs=None, name=None):
         """
         A decorator that is used to register a given URL rule.
         """
@@ -29,8 +29,8 @@ class RoutingApplication():
         def decorator(func, *args, **kwargs):
             func_name = func.__name__
             frm = inspect.stack()[1]
-            class_name = cls if cls else frm[3]
-            module_name = module if module else frm[0].f_back.f_globals["__name__"]
+            class_name = frm[3]
+            module_name = frm[0].f_back.f_globals["__name__"]
             full_class_name = module_name + '.' + class_name
 
             for method in methods:

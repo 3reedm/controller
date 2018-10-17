@@ -1,11 +1,21 @@
+import builtins
+
 import re
 
 from functools import reduce
 
-from tokenizer import app
+from tokenizer import app, Tokenizer
 
 
-def route(url, methods=["GET"], module_name="tokenizer", class_name="Tokenizer"):
+def set_global_class(tag, number):
+    str_exec = ""
+    for i in range(number):
+        str_exec += "builtins." + tag + "_" + str(i) + " = None\n"
+
+    exec(str_exec)
+
+
+def route(url, methods=["GET"], base_class="Tokenizer"):
     def wrapper(cls):
         urls = []
 
@@ -28,17 +38,30 @@ def route(url, methods=["GET"], module_name="tokenizer", class_name="Tokenizer")
 
         classtree(cls)
 
-        str_exec = "class " + class_name + ":\n"
+        set_global_class("NewClass", len(urls))
+
+        str_exec = ""
+        counter = 0
         for url in urls:
             last_slash_index = url.rfind("/") + 1
-            url = url[:last_slash_index] + "(" + url[last_slash_index:] + ")"
-            str_exec += "    @app.route('" + url + \
-                "', methods=" + str(methods) + \
-                ", module='" + module_name + "', cls='" + \
-                class_name + "')\n"
-        str_exec += "    def get(self, *args):\n        pass\n\n"
+            new_url = url[:last_slash_index] + \
+                "(" + url[last_slash_index:] + ")"
 
-        return exec(str_exec)
+            str_exec += "global NewClass_" + \
+                str(counter) + "\nclass NewClass_" + \
+                str(counter) + "(" + base_class + "):\n"
+            str_exec += "    @app.route('" + new_url + \
+                "', methods=" + str(methods) + \
+                ")\n"
+            str_exec += "    def get(self, *args):\n        super().get(*args)\n\n"
+            str_exec += "NewClass_" + \
+                str(counter) + " = NewClass_" + str(counter) + "\n\n"
+
+            counter += 1
+
+        exec(str_exec)
+
+        return
 
     return wrapper
 

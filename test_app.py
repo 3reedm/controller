@@ -1,39 +1,27 @@
 #!/usr/bin/python3.7
-
-import re
-import sys
-
-import unittest
-
-import tornado.httpclient
+import tornado.testing
 
 import app
 
 
-class TestApp(unittest.TestCase):
-    def __init__(self, *args):
-        super().__init__(*args)
-        self.args = [("http://localhost:3000/api/v1/portal/1.4/1/", r'{"token": "[0-9][0-9][0-9][0-9]"}'),
-                     ("http://localhost:3000/api/v1/portal/1.4/2/", r'{"token": "[0-9][0-9][0-9][0-9]"}')]
+class TestApp(tornado.testing.AsyncHTTPTestCase):
+    def get_app(self):
+        return app.app.get_application()
 
-    def setUp(self):
-        pass
+    def test_get(self):
+        response = self.fetch('/api')
+        self.assertEqual(
+            response.body.decode(), "<html><title>{0}: {1}</title><body>{0}: {1}</body></html>".format("403", "Forbidden"))
+        response = self.fetch('/app')
+        self.assertEqual(
+            response.body.decode(), "<html><title>{0}: {1}</title><body>{0}: {1}</body></html>".format("404", "Not Found"))
+        response = self.fetch('/api/v1/portal/1.4/2')
+        self.assertEqual(
+            response.body.decode(), '{"token": "0000"}')
 
-    def tearDown(self):
-        pass
 
-    def test_route(self):
-        for params in self.args:
-            try:
-                http_client = tornado.httpclient.HTTPClient()
-                response = http_client.fetch(params[0])
-            except Exception as e:
-                print("Error: %s" % e)
-            else:
-                self.assertTrue(re.match(params[1], response.body.decode()))
-            finally:
-                http_client.close()
+all = TestApp
 
 
 if __name__ == "__main__":
-    unittest.main()
+    tornado.testing.main()

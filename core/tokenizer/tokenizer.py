@@ -53,12 +53,13 @@ class Tokenizer(RequestRoutingHandler):
             return False
 
     def _get_func_name(self):
+        print(1)
         full_class_name = self.__module__ + '.' + self.__class__.__name__
         rule, func_name = self.application.handler_map.get(
             full_class_name, {}).get(self.request.method, (None, None))
 
         if not rule or not func_name:
-            raise HTTPError(404, "Olololo")
+            raise HTTPError(404, "")
 
         match = re.match(rule, self.request.path) or self._match(
             rule, self.request.path)
@@ -89,5 +90,11 @@ class Tokenizer(RequestRoutingHandler):
         return child_items[path[-1]]
 
     def get(self, *args):
-        token = self._get_token(args)
-        self.write({'token': token})
+        paths = self.request.uri[1:].split('/')
+
+        if (len(paths) != 5):
+            self.write(
+                "<html><title>{0}: {1}</title><body>{0}: {1}</body></html>".format("403", "Forbidden"))
+        else:
+            token = self._get_token(paths)
+            self.write({'token': token})

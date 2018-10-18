@@ -19,6 +19,8 @@ def route(url, methods=["GET"], base_class="Tokenizer"):
     def wrapper(cls):
         urls = []
 
+        urls.append("/" + cls.__name__.lower())
+
         def classtree(cls, prev_name=""):
             cls_name_arr = cls.__name__.split('_')
 

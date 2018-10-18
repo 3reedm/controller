@@ -1,0 +1,420 @@
+DEBUG:root:Stopping
+
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api/v2 (192.168.12.10) 0.88ms
+DEBUG:root:Stopping
+
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (192.168.12.10) 0.88ms
+DEBUG:root:Stopping
+
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+INFO:tornado.application.routing:register
+ERROR:tornado.application:Uncaught exception in write_error
+Traceback (most recent call last):
+  File "./libs/tornado-routing/tornado_routing.py", line 110, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "<string>", line 5, in get
+  File "./core/tokenizer/tokenizer.py", line 95, in get
+    raise HTTPError("403", "Olololo")
+tornado.web.HTTPError: <unprintable HTTPError object>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/tornado/web.py", line 1112, in send_error
+    self.write_error(status_code, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/tornado/web.py", line 1140, in write_error
+    "message": self._reason,
+TypeError: %d format: a number is required, not str
+ERROR:asyncio:Future exception was never retrieved
+future: <Future finished exception=TypeError("'>=' not supported between instances of 'str' and 'int'")>
+Traceback (most recent call last):
+  File "./libs/tornado-routing/tornado_routing.py", line 110, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "<string>", line 5, in get
+  File "./core/tokenizer/tokenizer.py", line 95, in get
+    raise HTTPError("403", "Olololo")
+tornado.web.HTTPError: <unprintable HTTPError object>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/tornado/gen.py", line 326, in wrapper
+    yielded = next(result)
+  File "./libs/tornado-routing/tornado_routing.py", line 118, in _execute
+    self._handle_request_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/tornado/web.py", line 1648, in _handle_request_exception
+    self.send_error(e.status_code, exc_info=sys.exc_info())
+  File "/usr/local/lib/python3.7/site-packages/tornado/web.py", line 1116, in send_error
+    self.finish()
+  File "/usr/local/lib/python3.7/site-packages/tornado/web.py", line 1038, in finish
+    (self._status_code >= 100 and self._status_code < 200)):
+TypeError: '>=' not supported between instances of 'str' and 'int'
+DEBUG:root:Stopping
+
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+INFO:tornado.application.routing:register
+ERROR:tornado.application:Uncaught exception GET /api (192.168.12.10)
+HTTPServerRequest(protocol='http', host='192.168.12.10:3000', method='GET', uri='/api', version='HTTP/1.1', remote_ip='192.168.12.10')
+Traceback (most recent call last):
+  File "./libs/tornado-routing/tornado_routing.py", line 110, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "<string>", line 5, in get
+  File "./core/tokenizer/tokenizer.py", line 95, in get
+    self.write(HTTPError("403", "Olololo"))
+  File "/usr/local/lib/python3.7/site-packages/tornado/web.py", line 744, in write
+    raise TypeError(message)
+TypeError: write() only accepts bytes, unicode, and dict objects
+ERROR:tornado.access:500 GET /api (192.168.12.10) 1.63ms
+DEBUG:root:Stopping
+
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+INFO:tornado.application.routing:register
+ERROR:tornado.application:Uncaught exception GET /api (192.168.12.10)
+HTTPServerRequest(protocol='http', host='192.168.12.10:3000', method='GET', uri='/api', version='HTTP/1.1', remote_ip='192.168.12.10')
+Traceback (most recent call last):
+  File "./libs/tornado-routing/tornado_routing.py", line 110, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "<string>", line 5, in get
+  File "./core/tokenizer/tokenizer.py", line 95, in get
+    self.write(HTTPError("403", "Olololo").message)
+AttributeError: 'HTTPError' object has no attribute 'message'
+ERROR:tornado.access:500 GET /api (192.168.12.10) 0.97ms
+DEBUG:root:Stopping
+
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+INFO:tornado.application.routing:register
+ERROR:tornado.application:Uncaught exception GET /api (192.168.12.10)
+HTTPServerRequest(protocol='http', host='192.168.12.10:3000', method='GET', uri='/api', version='HTTP/1.1', remote_ip='192.168.12.10')
+Traceback (most recent call last):
+  File "./libs/tornado-routing/tornado_routing.py", line 110, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "<string>", line 5, in get
+  File "./core/tokenizer/tokenizer.py", line 95, in get
+    self.write(HTTPError("403", "Olololo").__str__())
+  File "/usr/local/lib/python3.7/site-packages/tornado/web.py", line 2268, in __str__
+    self.reason or httputil.responses.get(self.status_code, 'Unknown'))
+TypeError: %d format: a number is required, not str
+ERROR:tornado.access:500 GET /api (192.168.12.10) 1.61ms
+DEBUG:root:Stopping
+
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (192.168.12.10) 0.85ms
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api/v2 (192.168.12.10) 0.66ms
+WARNING:tornado.access:404 GET /api/v3 (192.168.12.10) 0.42ms
+DEBUG:root:Stopping
+
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (192.168.12.10) 0.78ms
+DEBUG:root:Stopping
+
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+INFO:tornado.application.routing:register
+ERROR:tornado.application:Uncaught exception GET /api (192.168.12.10)
+HTTPServerRequest(protocol='http', host='192.168.12.10:3000', method='GET', uri='/api', version='HTTP/1.1', remote_ip='192.168.12.10')
+Traceback (most recent call last):
+  File "./libs/tornado-routing/tornado_routing.py", line 110, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "<string>", line 5, in get
+  File "./core/tokenizer/tokenizer.py", line 96, in get
+    "<html><title>%d: %s</title><body>%d: %s</body></html>" % (403, "Forbidden"))
+TypeError: not enough arguments for format string
+ERROR:tornado.access:500 GET /api (192.168.12.10) 0.96ms
+DEBUG:root:Stopping
+
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+INFO:tornado.application.routing:register
+ERROR:tornado.application:Uncaught exception GET /api (192.168.12.10)
+HTTPServerRequest(protocol='http', host='192.168.12.10:3000', method='GET', uri='/api', version='HTTP/1.1', remote_ip='192.168.12.10')
+Traceback (most recent call last):
+  File "./libs/tornado-routing/tornado_routing.py", line 110, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "<string>", line 5, in get
+  File "./core/tokenizer/tokenizer.py", line 96, in get
+    "<html><title>{0}: {1}</title><body>{0}: {1}</body></html>" % (403, "Forbidden"))
+TypeError: not all arguments converted during string formatting
+ERROR:tornado.access:500 GET /api (192.168.12.10) 0.99ms
+DEBUG:root:Stopping
+
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+INFO:tornado.application.routing:register
+ERROR:tornado.application:Uncaught exception GET /api (192.168.12.10)
+HTTPServerRequest(protocol='http', host='192.168.12.10:3000', method='GET', uri='/api', version='HTTP/1.1', remote_ip='192.168.12.10')
+Traceback (most recent call last):
+  File "./libs/tornado-routing/tornado_routing.py", line 110, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "<string>", line 5, in get
+  File "./core/tokenizer/tokenizer.py", line 96, in get
+    "<html><title>{0}: {1}</title><body>{0}: {1}</body></html>" % ("403", "Forbidden"))
+TypeError: not all arguments converted during string formatting
+ERROR:tornado.access:500 GET /api (192.168.12.10) 1.03ms
+DEBUG:root:Stopping
+
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (192.168.12.10) 0.87ms
+DEBUG:root:Stopping
+
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:root:Starting Web listen on: 192.168.12.10:3000
+WARNING:tornado.access:404 GET /api/v2/portal/1.4/1 (192.168.12.10) 0.45ms
+WARNING:tornado.access:404 GET /api/v2/portal/1.4/2 (192.168.12.10) 0.34ms
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api/v1/portal/1.4/2 (192.168.12.10) 0.97ms
+DEBUG:root:Stopping
+
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:asyncio:Using selector: EpollSelector
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 0.83ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 0.83ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 0.86ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 0.84ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 0.92ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 0.87ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 0.88ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 0.82ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 0.81ms
+WARNING:tornado.access:404 GET /app (127.0.0.1) 0.33ms
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 0.54ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 0.81ms
+WARNING:tornado.access:404 GET /app (127.0.0.1) 0.35ms
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api/v1/portal/1.4/2 (127.0.0.1) 1.07ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 0.82ms
+WARNING:tornado.access:404 GET /app (127.0.0.1) 0.35ms
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api/v1/portal/1.4/2 (127.0.0.1) 1.10ms

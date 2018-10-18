@@ -1,5 +1,8 @@
 #ignore dynamic bin
 *.pyc
+*.coverage
 __pycache
+htmlcov/
+htmlcov
 #ignore bluefish temp files
 *.*~

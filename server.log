@@ -418,3 +418,75 @@ INFO:tornado.access:200 GET /api (127.0.0.1) 0.82ms
 WARNING:tornado.access:404 GET /app (127.0.0.1) 0.35ms
 INFO:tornado.application.routing:register
 INFO:tornado.access:200 GET /api/v1/portal/1.4/2 (127.0.0.1) 1.10ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 0.86ms
+WARNING:tornado.access:404 GET /app (127.0.0.1) 0.36ms
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api/v1/portal/1.4/2 (127.0.0.1) 1.27ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 0.79ms
+WARNING:tornado.access:404 GET /app (127.0.0.1) 0.36ms
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api/v1/portal/1.4/2 (127.0.0.1) 0.75ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 1.48ms
+WARNING:tornado.access:404 GET /app (127.0.0.1) 0.33ms
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api/v1/portal/1.4/2 (127.0.0.1) 0.74ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 1.41ms
+WARNING:tornado.access:404 GET /app (127.0.0.1) 0.35ms
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api/v1/portal/1.4/2 (127.0.0.1) 0.85ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 1.13ms
+WARNING:tornado.access:404 GET /app (127.0.0.1) 0.34ms
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api/v1/portal/1.4/2 (127.0.0.1) 1.82ms
+INFO:tornado.application.routing:register GET /(api) to routing.NewClass_0.get
+INFO:tornado.application.routing:register GET /api/v1/portal/1.4/(2) to routing.NewClass_1.get
+INFO:tornado.application.routing:register GET /api/v1/portal/(1.4) to routing.NewClass_2.get
+INFO:tornado.application.routing:register GET /api/v1/(portal) to routing.NewClass_3.get
+INFO:tornado.application.routing:register GET /api/(v1) to routing.NewClass_4.get
+INFO:tornado.application.routing:register GET /api/(v2) to routing.NewClass_5.get
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api (127.0.0.1) 0.81ms
+WARNING:tornado.access:404 GET /app (127.0.0.1) 0.34ms
+INFO:tornado.application.routing:register
+INFO:tornado.access:200 GET /api/v1/portal/1.4/2 (127.0.0.1) 1.10ms

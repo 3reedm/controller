@@ -1,7 +1,15 @@
 #!/usr/bin/python3.7
+import re
+
+import coverage
 import tornado.testing
 
+cov = coverage.Coverage()
+cov.start()
 import app
+cov.stop()
+cov.save()
+cov.html_report()
 
 
 class TestApp(tornado.testing.AsyncHTTPTestCase):
@@ -16,8 +24,8 @@ class TestApp(tornado.testing.AsyncHTTPTestCase):
         self.assertEqual(
             response.body.decode(), "<html><title>{0}: {1}</title><body>{0}: {1}</body></html>".format("404", "Not Found"))
         response = self.fetch('/api/v1/portal/1.4/2')
-        self.assertEqual(
-            response.body.decode(), '{"token": "0000"}')
+        self.assertTrue(
+            re.match(r'{"token": "[0-9]{4}"}', response.body.decode()))
 
 
 all = TestApp

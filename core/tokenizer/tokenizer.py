@@ -4,7 +4,7 @@ import re
 from tornado.escape import json_decode, json_encode
 from tornado.web import HTTPError
 
-from libs.frouting.frouting import RequestRoutingHandler, RoutingApplication
+from frouting import RequestRoutingHandler, RoutingApplication
 
 logging.basicConfig(filename="server.log", level=logging.DEBUG)
 
@@ -54,7 +54,6 @@ class Tokenizer(RequestRoutingHandler):
             return False
 
     def _get_func_name(self):
-        print(1)
         full_class_name = self.__module__ + '.' + self.__class__.__name__
         rule, func_name = self.application.handler_map.get(
             full_class_name, {}).get(self.request.method, (None, None))

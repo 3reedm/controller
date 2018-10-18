@@ -2,13 +2,17 @@
 import logging
 import sys
 
+sys.path.insert(1, "./core/routing")
+sys.path.insert(1, "./core/tokenizer")
+sys.path.insert(1, "./libs/frouting")
+
 import tornado.httpserver
 import tornado.ioloop
 import tornado.options
 
 from tornado.options import define, options
 
-from core.tokenizer.tokenizer import app
+from routing import app, route
 
 define("port", default=3000,
        help="Server listening port", type=int)
@@ -16,6 +20,18 @@ define("address", default="192.168.12.10",
        help="Server listening address", type=str)
 
 logging.basicConfig(filename="server.log", level=logging.DEBUG)
+
+
+@route("/")
+class API:
+    class V1:
+        class Portal:
+            class Version_1_4:
+                class Redaction_2:
+                    pass
+
+    class V2:
+        pass
 
 
 def __main__():

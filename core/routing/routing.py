@@ -4,7 +4,7 @@ import re
 
 from functools import reduce
 
-from core.tokenizer.tokenizer import app, Tokenizer
+from tokenizer import app, Tokenizer
 
 
 def set_global_class(tag, number):
@@ -66,15 +66,3 @@ def route(url, methods=["GET"], base_class="Tokenizer"):
         return
 
     return wrapper
-
-
-@route("/")
-class API:
-    class V1:
-        class Portal:
-            class Version_1_4:
-                class Redaction_2:
-                    pass
-
-    class V2:
-        pass

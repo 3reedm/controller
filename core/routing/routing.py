@@ -4,7 +4,7 @@ import re
 
 from functools import reduce
 
-from tokenizer import app, Tokenizer
+from core.tokenizer.tokenizer import app, Tokenizer
 
 
 def set_global_class(tag, number):

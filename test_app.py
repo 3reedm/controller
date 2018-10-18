@@ -32,4 +32,4 @@ all = TestApp
 
 
 if __name__ == "__main__":
-    tornado.testing.main()
+    tornado.testing.main(verbosity=2)

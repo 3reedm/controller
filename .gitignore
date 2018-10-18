@@ -1,6 +1,7 @@
 #ignore dynamic bin
 *.pyc
 *.coverage
+*.log
 __pycache
 htmlcov/
 htmlcov

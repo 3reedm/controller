@@ -4,7 +4,7 @@ import re
 
 from functools import reduce
 
-from tokenizer import app, Tokenizer
+from core.tokenizer.tokenizer import app, Tokenizer
 
 
 def set_global_class(tag, number):
@@ -15,13 +15,13 @@ def set_global_class(tag, number):
     exec(str_exec)
 
 
-def route(url, methods=["GET"], base_class="Tokenizer"):
+def route(pass_url="", methods=["GET"], base_class="Tokenizer"):
     def wrapper(cls):
         urls = []
 
-        urls.append("/" + cls.__name__.lower())
+        urls.append(pass_url + "/" + cls.__name__.lower())
 
-        def classtree(cls, prev_name=""):
+        def classtree(cls, prev_name=pass_url):
             cls_name_arr = cls.__name__.split('_')
 
             if (len(cls_name_arr) > 1):

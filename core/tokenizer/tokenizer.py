@@ -4,7 +4,7 @@ import re
 from tornado.escape import json_decode, json_encode
 from tornado.web import HTTPError
 
-from frouting import RequestRoutingHandler, RoutingApplication
+from libs.frouting.frouting import RequestRoutingHandler, RoutingApplication
 
 logging.basicConfig(filename="server.log", level=logging.DEBUG)
 
@@ -94,7 +94,7 @@ class Tokenizer(RequestRoutingHandler):
 
         if (len(paths) != 5):
             self.write(
-                "<html><title>{0}: {1}</title><body>{0}: {1}</body></html>".format("403", "Forbidden"))
+                f"<html><title>{0}: {1}</title><body>{0}: {1}</body></html>".format("403", "Forbidden"))
         else:
             token = self._get_token(paths)
             self.write({'token': token})

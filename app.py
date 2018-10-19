@@ -23,11 +23,25 @@ class API:
     class V1:
         class Portal:
             class Version_1_4:
-                class Redaction_2:
-                    pass
+                pass
+
+            class Version_1_5:
+                pass
+
+            class Version_1_6:
+                pass
+
+            class Version_1_7:
+                pass
+
+        class SafeInspect:
+            class Version_2_4_0:
+                pass
 
     class V2:
-        pass
+        class Portal:
+            class Version_1_4:
+                pass
 
 
 def __main__():

@@ -26,6 +26,12 @@ class TestApp(tornado.testing.AsyncHTTPTestCase):
         response = self.fetch('/api/v1/portal/1.4/2')
         self.assertTrue(
             re.match(r'{"token": "[0-9]{4}"}', response.body.decode()))
+        response = self.fetch('/api/v1/safeinspect/2.4/0')
+        self.assertTrue(
+            re.match(r'{"token": "[0-9]{4}"}', response.body.decode()))
+        response = self.fetch('/api/v1/safeinspect/2.4/1')
+        self.assertFalse(
+            re.match(r'{"token": "[0-9]{4}"}', response.body.decode()))
 
 
 all = TestApp

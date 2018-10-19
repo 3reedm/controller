@@ -38,11 +38,6 @@ class API:
             class Version_2_4_0:
                 pass
 
-    class V2:
-        class Portal:
-            class Version_1_4:
-                pass
-
 
 def __main__():
     server = tornado.httpserver.HTTPServer(app.get_application())
